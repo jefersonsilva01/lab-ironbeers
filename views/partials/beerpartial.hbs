@@ -5,16 +5,16 @@
       <h2><a href='/beers/{{this.id}}'>{{this.name}}</a></h2>
       <p>{{this.description}}</p>
       <p>{{this.tagline}}</p>
-      {{#if this.food}}
+      {{#if this.food_pairing}}
         <h3>Food Pairing</h3>
         <ul>
-          {{#each this.food}}
+          {{#each this.food_pairing}}
             <li>{{this}}</li>
           {{/each}}
         </ul>
       {{/if}}
-      {{#if this.brewers}}
-        <p><strong>Brewers Tips:</strong> {{this.brewers}}</p>
+      {{#if this.brewers_tips}}
+        <p><strong>Brewers Tips:</strong> {{this.brewers_tips}}</p>
       {{/if}}
     </div>
   </div>

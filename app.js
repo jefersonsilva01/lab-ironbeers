@@ -45,7 +45,6 @@ app.get('/beers/:id?', (req, res) => {
   punkAPI
     .getBeer(id)
     .then(data => {
-      console.log(data);
       res.render('beers', { data })
     })
     .catch(error => console.log(error));
@@ -55,16 +54,7 @@ app.get('/random-beer', (req, res) => {
   punkAPI
     .getRandom()
     .then(responseFromAPI => {
-      let data = responseFromAPI.map((el) => {
-        return {
-          image_url: el.image_url,
-          name: el.name,
-          description: el.description,
-          tagline: el.tagline,
-          food: el.food_pairing,
-          brewers: el.brewers_tips
-        };
-      });
+      let data = responseFromAPI
       res.render('random-beer', { data })
     }
     )
